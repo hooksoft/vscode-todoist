@@ -171,7 +171,7 @@ const captureTodo = async (scope: Scope) => {
   if (activeSelection && !activeSelection.isEmpty) {
     const fileName = window.activeTextEditor?.document.fileName
     const lineNumber = activeSelection.start.line
-    inputBoxOptions.value = `\n ${env.uriScheme}://${EXTENSION_ID}/${fileName}#${lineNumber}`
+    inputBoxOptions.value = `\n ${env.uriScheme}://file/${fileName}:${lineNumber}`
   }
   const inputString = await window.showInputBox(inputBoxOptions)
   if (!inputString) {
